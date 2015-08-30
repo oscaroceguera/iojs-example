@@ -1,4 +1,4 @@
-const st = require('st');
+const st = require('st'); // servidor estatico
 const path = require('path');
 
 const mount = st({
