@@ -13,8 +13,6 @@ rtc.startVideo(function(err){
 	if(err) return logError(err)
 });
 
-
-
 const record = document.querySelector('#record');
 
 record.addEventListener('click', function(e){

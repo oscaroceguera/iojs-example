@@ -4,11 +4,14 @@
   "description": "A realtime chat with video and gif",
   "main": "index.js",
   "scripts": {
-    "build": "browserify client/app.js > public/app.js"
+    "postinstall": "npm run build-js",
+    "build-js": "browserify client/app.js > public/app.js",
+    "start": "node server.js"
   },
   "author": "Oscar Oceguera",
   "license": "ISC",
   "dependencies": {
+    "course": "0.0.1",
     "st": "^0.5.5",
     "webrtc2images": "^1.4.4"
   },
