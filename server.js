@@ -12,9 +12,14 @@ server.on('listening', onListening)
 server.listen(port)
 
 function onRequest(req, res){
-	// cargar un archivo con el meto sincrono readFileSync
-	let file = fs.readFileSync('public/index.html');
-	res.end(file);
+	// Cargar archivo de manera asincrona
+	fs.readFile('public/index.html', function(err, file){
+		if(err){
+			return res.end(err.message);
+		}
+		
+		res.end(file);
+	});
 }
 
 function onListening(){
